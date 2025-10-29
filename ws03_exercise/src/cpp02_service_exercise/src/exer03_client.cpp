@@ -45,6 +45,9 @@ public:
     }
 
     // 2-3.发送请求数据
+    //Public members:
+    // future: a std::future<SharedResponse>.
+    // request_id: the request id associated with the future.
     rclcpp::Client<Distance>::FutureAndRequestId send_goal(float x, float y, float theta)
     {
         auto request = std::make_shared<Distance::Request>();

@@ -15,6 +15,8 @@ find_package(geometry_msgs REQUIRED)
 
 add_executable(exer04_action_server src/exer04_action_server.cpp)
 add_executable(exer05_action_client src/exer05_action_client.cpp)
+add_executable(action_client src/action_client.cpp)
+add_executable(action_server src/action_server.cpp)
 
 target_include_directories(exer04_action_server PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -31,7 +33,25 @@ ament_target_dependencies(
 )
 
 ament_target_dependencies(
+  action_server
+  "rclcpp"
+  "rclcpp_action"
+  "geometry_msgs"
+  "turtlesim"
+  "base_interfaces_demo"
+)
+
+ament_target_dependencies(
   exer05_action_client
+  "rclcpp"
+  "rclcpp_action"
+  "geometry_msgs"
+  "turtlesim"
+  "base_interfaces_demo"
+)
+
+ament_target_dependencies(
+  action_client
   "rclcpp"
   "rclcpp_action"
   "geometry_msgs"
@@ -42,6 +62,8 @@ ament_target_dependencies(
 install(TARGETS 
   exer04_action_server
   exer05_action_client
+  action_server
+  action_client
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})

@@ -15,6 +15,8 @@ find_package(turtlesim REQUIRED)
 
 add_executable(demo01_static_tf_broadcaster src/demo01_static_tf_broadcaster.cpp)
 add_executable(demo02_dynamic_tf_broadcaster src/demo02_dynamic_tf_broadcaster.cpp)
+add_executable(learn_stati_tf_broadcaster src/learn_stati_tf_broadcaster.cpp)
+add_executable(learn_dynamic_bc src/learn_dynamic_bc.cpp)
 
 target_include_directories(demo01_static_tf_broadcaster PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -40,9 +42,28 @@ ament_target_dependencies(
   "turtlesim"
 )
 
+ament_target_dependencies(
+  learn_stati_tf_broadcaster
+  "rclcpp"
+  "tf2"
+  "tf2_ros"
+  "geometry_msgs"
+  "turtlesim"
+)
+
+ament_target_dependencies(
+  learn_dynamic_bc
+  "rclcpp"
+  "tf2"
+  "tf2_ros"
+  "geometry_msgs"
+  "turtlesim"
+)
 install(TARGETS
   demo01_static_tf_broadcaster
   demo02_dynamic_tf_broadcaster
+  learn_stati_tf_broadcaster
+  learn_dynamic_bc
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

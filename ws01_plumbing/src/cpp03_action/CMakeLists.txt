@@ -13,6 +13,8 @@ find_package(base_interfaces_demo REQUIRED)
 
 add_executable(demo01_action_server src/demo01_action_server.cpp)
 add_executable(demo02_action_client src/demo02_action_client.cpp)
+add_executable(demo03_action_server src/demo03_action_server.cpp)
+add_executable(demo04_action_client src/demo04_action_client.cpp)
 
 target_include_directories(demo01_action_server PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -33,9 +35,25 @@ ament_target_dependencies(
   "base_interfaces_demo"
 )
 
+ament_target_dependencies(
+  demo03_action_server
+  "rclcpp"
+  "rclcpp_action"
+  "base_interfaces_demo"
+)
+
+ament_target_dependencies(
+  demo04_action_client
+  "rclcpp"
+  "rclcpp_action"
+  "base_interfaces_demo"
+)
+
 install(TARGETS
   demo01_action_server
   demo02_action_client
+  demo03_action_server
+  demo04_action_client
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
