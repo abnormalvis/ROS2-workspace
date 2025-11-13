@@ -1,0 +1,30 @@
+Starting >>> tf_broadcast_point
+Aborted  <<< tf_broadcast_point [7.66s]
+
+Summary: 0 packages finished [8.12s]
+  1 package aborted: tf_broadcast_point
+  1 package had stderr output: tf_broadcast_point
+Starting >>> tf_broadcast_point
+Aborted  <<< tf_broadcast_point [3.04s]
+
+Summary: 0 packages finished [3.46s]
+  1 package aborted: tf_broadcast_point
+  1 package had stderr output: tf_broadcast_point
+Starting >>> tf_broadcast_point
+
+Summary: 0 packages finished [1.61s]
+  1 package failed: tf_broadcast_point
+  1 package had stderr output: tf_broadcast_point
+Starting >>> tf_broadcast_point
+
+Summary: 0 packages finished [1.42s]
+  1 package failed: tf_broadcast_point
+  1 package had stderr output: tf_broadcast_point
+Starting >>> tf_broadcast_point
+Finished <<< tf_broadcast_point [13.7s]
+
+Summary: 1 package finished [14.2s]
+Starting >>> tf_broadcast_point
+Finished <<< tf_broadcast_point [1.19s]
+
+Summary: 1 package finished [1.53s]
