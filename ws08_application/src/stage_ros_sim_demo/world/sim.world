@@ -1,0 +1,12 @@
+revolution 0.02
+interval_sim 200
+
+Window
+(
+    size [600.000 400.000]
+    scale 35
+    center [ 0 0 ]
+    rotote [ 0 0 ]
+
+    show_date 1
+)
